@@ -1,0 +1,306 @@
+@import '../../styles/breakpoints';
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+@keyframes slide-in {
+    from {
+      left: -100%;
+      opacity: 0;
+    }
+    to {
+      left: 0;
+      opacity: 1;
+    }
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 40px;
+    border-bottom: 5px solid $red;
+
+    @media screen and (max-width: $mobile) {
+        border: none; 
+        padding: 0 20px;
+        padding: 0 20px 0 10px;
+    }
+
+    .menu-container {
+        display: none;
+        cursor: pointer;
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+            background-color: $gray;
+            border-radius: 15px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .menu-icon {
+            width: 38px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+
+    .logo-container {
+        gap: 15px;
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+
+        .logo {
+            width: auto;
+            height: auto;
+        }
+
+        .title {
+                font-family: $primary-font;
+                color: $yellow;
+                font-weight: normal;
+                font-size: 20px;
+                margin: auto 0;
+                font-weight: 600;
+        }
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .name {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+            cursor: pointer;
+
+            @media screen and (max-width: $mobile-sm) {
+                display: none;
+            }
+
+            .name {
+                font-family: $primary-font;
+                color: $white;
+                font-weight: normal;
+                font-size: 14px;
+                font-weight: 400;
+                margin: auto 0;
+            }
+
+            .down-arrow {
+                width: 12px;
+                height: 12px;
+                cursor: pointer;
+            }
+        }
+
+        .avatar {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            background-color: $yellow;
+            border-radius: 50%;
+            width: 27px;
+            height: 27px;
+            padding: 15px;
+            position: relative;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: $mobile) {
+                width: 35px;
+                height: 35px;   
+                cursor: pointer;
+            }
+
+            .logout {
+                cursor: pointer;
+                position: absolute;
+                top: 50px;
+                right: 20px;
+                background-color: $gray;
+                z-index: 10;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 18px 12px;
+                gap: 10px;
+                border-radius: 3px;
+                width: max-content;
+
+                .logout-logo {
+
+                }
+                .logout-text {
+                    font-family: $primary-font;
+                    color: $white;
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+
+            .avatar-name {
+                font-family: $primary-font;
+                color: #000000;
+                font-weight: bold;
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .mobile-arrow {
+                display: none;
+                cursor: pointer;
+                
+                @media screen and (max-width: $mobile) {
+                    position: absolute;
+                    bottom: -10px;
+                    right: 0;
+                    background-color: $gray;
+                    border-radius: 50%;
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+
+                .down-arrow {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    //////////////////////////////////////////
+    //////////////////////////////////////////
+    //////////////////////////////////////////
+    //////////////////////////////////////////
+    .mobile-menu-container {
+        width: 70%;
+        min-height: 84vh;
+        position: absolute;
+        top: 16vh;
+        left: 0;
+        z-index: 20;
+        border-radius: 3px;
+
+        .navbar-mobile-section {
+            // animation: slide-in 10s forwards;
+            background-color: $black;
+            min-height: 84vh;
+            overflow-y: scroll;
+            padding: 50px 40px 0 40px;
+            position: relative;
+            border-radius: 3px;
+        
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        
+            .close-container {
+
+                .close-logo {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    cursor: pointer;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        
+            .nav-section {
+        
+                &:nth-child(2) {
+                    margin-top: 20px;
+                }
+                &:nth-child(3) {
+                    margin-top: 20px;
+                }
+        
+                .title {
+                    font-family: $primary-font;
+                    color: $white;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-weight: normal;
+                    margin-bottom: 20px;
+                }
+        
+                .link-container {
+                    display: flex;
+                    flex-direction: column;
+        
+                    .link-sub-container {
+                        margin-left: 20px;
+                        transition: 0.5s;
+        
+                        .sub-link {
+                            font-family: $primary-font;
+                            color: $white;
+                            font-weight: normal;
+                            text-decoration: none;
+                            font-weight: 400;
+                            font-size: 16px;
+                        }
+        
+                        .line {
+                            width: 30%;
+                            border: none;
+                            height: 3px;
+                            background-color: $white;
+                            opacity: 1;
+                        }
+        
+                        &:hover {
+        
+                            .sub-link {
+                                color: $yellow;
+                            }
+        
+                            .line {
+                                width: 80%;
+                                transition: 0.3s;
+                                background-color: $red;
+                            }
+                        }
+                    }
+                }
+        
+                .main-link-container {
+        
+                    .main-link {
+                        font-family: $primary-font;
+                        color: $white;
+                        font-weight: normal;
+                        text-decoration: none;
+                        opacity: 1;
+                        font-weight: 700;
+                        color: $yellow;
+                    }
+        
+                    .line {
+                        width: 30%;
+                        border: none;
+                        height: 3px;
+                        background-color: $red;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

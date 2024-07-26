@@ -1,0 +1,13 @@
+@import './styles/breakpoints';
+@import './styles/colors';
+@import './styles/fonts';
+ 
+.content-section {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  overflow-y: hidden;
+
+  @media screen and (max-width: $mobile) {
+    grid-template-columns: 1fr;
+  }
+}

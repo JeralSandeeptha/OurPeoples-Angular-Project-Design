@@ -1,0 +1,99 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+@import '../../styles/breakpoints';
+
+.navbar-section {
+    background-color: $black;
+    min-height: calc(100vh - 100px);
+    overflow-y: scroll;
+    padding: 50px 40px 0 40px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
+
+    .nav-section {
+
+        &:nth-child(2) {
+            margin-top: 20px;
+        }
+        &:nth-child(3) {
+            margin-top: 20px;
+        }
+
+        .title {
+            font-family: $primary-font;
+            color: $white;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+
+            .link-sub-container {
+                margin-left: 20px;
+                transition: 0.5s;
+
+                .sub-link {
+                    font-family: $primary-font;
+                    color: $white;
+                    font-weight: normal;
+                    text-decoration: none;
+                    font-weight: 400;
+                    font-size: 16px;
+                }
+
+                .line {
+                    width: 30%;
+                    border: none;
+                    height: 3px;
+                    background-color: $white;
+                    opacity: 1;
+                }
+
+                &:hover {
+
+                    .sub-link {
+                        color: $yellow;
+                    }
+
+                    .line {
+                        width: 80%;
+                        transition: 0.3s;
+                        background-color: $red;
+                    }
+                }
+            }
+        }
+
+        .main-link-container {
+
+            .main-link {
+                font-family: $primary-font;
+                color: $white;
+                font-weight: normal;
+                text-decoration: none;
+                opacity: 1;
+                font-weight: 700;
+                color: $yellow;
+            }
+
+            .line {
+                width: 30%;
+                border: none;
+                height: 3px;
+                background-color: $red;
+                opacity: 1;
+            }
+        }
+    }
+}
